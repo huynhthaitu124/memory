@@ -28,7 +28,7 @@ A romantic and elegant web invitation for a special buffet celebration commemora
 
 ## Live Demo
 
-Visit the live invitation: [https://huynh.github.io/buffet-invitation/](https://huynh.github.io/buffet-invitation/)
+Visit the live invitation: [https://huynhthaitu124.github.io/memory/](https://huynhthaitu124.github.io/memory/)
 
 ## Technologies Used
 
