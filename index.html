@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lời Mời Buffet Đặc Biệt - Kỷ Niệm 2 Năm</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: #f8f6f2;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Background pattern with floating hearts */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f0ede6' fill-opacity='0.3'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm-20-18c9.941 0 18 8.059 18 18s-8.059 18-18 18S-8 39.941-8 30s8.059-18 18-18z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            z-index: 0;
+        }
+
+        /* Floating hearts animation */
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 1.5rem;
+            color: rgba(255, 182, 193, 0.3);
+            animation: floatHeart 8s infinite ease-in-out;
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Sparkle animation */
+        .sparkle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: radial-gradient(circle, #ffd700 0%, transparent 70%);
+            border-radius: 50%;
+            animation: sparkleFloat 4s infinite ease-in-out;
+        }
+
+        @keyframes sparkleFloat {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0) rotate(0deg);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1) rotate(180deg);
+            }
+        }
+
+        /* Main container - defined with breathing effect below */
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Header text with shimmer */
+        .header-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #8b7355;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            background: linear-gradient(45deg, #8b7355, #d4c4a8, #8b7355);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        /* Signature name with romantic glow */
+        .signature-name {
+            font-family: 'Great Vibes', cursive;
+            font-size: 5rem;
+            font-weight: 400;
+            color: #2c2c2c;
+            margin: 30px 0;
+            line-height: 0.9;
+            position: relative;
+            text-shadow: 0 0 20px rgba(255, 182, 193, 0.4);
+            animation: gentleGlow 4s ease-in-out infinite alternate;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .signature-name:hover {
+            transform: scale(1.05);
+            text-shadow: 0 0 30px rgba(255, 182, 193, 0.6);
+        }
+
+        @keyframes gentleGlow {
+            0% {
+                text-shadow: 0 0 20px rgba(255, 182, 193, 0.4);
+            }
+            100% {
+                text-shadow: 0 0 30px rgba(255, 182, 193, 0.6), 0 0 40px rgba(255, 182, 193, 0.3);
+            }
+        }
+
+        /* Love particles on signature click */
+        .love-particle {
+            position: absolute;
+            pointer-events: none;
+            font-size: 1.2rem;
+            animation: loveParticle 2s ease-out forwards;
+        }
+
+        @keyframes loveParticle {
+            0% {
+                opacity: 1;
+                transform: scale(0) rotate(0deg);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.2) rotate(180deg);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0) rotate(360deg) translateY(-50px);
+            }
+        }
+
+        /* Main invitation text */
+        .invitation-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #8b7355;
+            line-height: 1.8;
+            margin: 40px 0;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* Restaurant name - interactive */
+        .restaurant-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c2c2c;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin: 40px 0 30px 0;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+            padding: 10px 0;
+        }
+
+        .restaurant-name:hover {
+            color: #8b7355;
+            transform: translateY(-2px);
+        }
+
+        .restaurant-name::after {
+            content: " ℹ️";
+            font-size: 0.8rem;
+            opacity: 0.6;
+            margin-left: 8px;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: #ffffff;
+            margin: 5% auto;
+            padding: 40px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.2);
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #2c2c2c;
+        }
+
+        .modal-header {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #2c2c2c;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .modal-section {
+            margin-bottom: 25px;
+        }
+
+        .modal-section h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: #8b7355;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .modal-section p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .highlight {
+            color: #2c2c2c;
+            font-weight: 500;
+        }
+
+        .menu-item {
+            background: #f8f6f2;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border-left: 4px solid #8b7355;
+        }
+
+        .menu-item-name {
+            font-weight: 600;
+            color: #2c2c2c;
+            margin-bottom: 5px;
+        }
+
+        .menu-item-desc {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .price {
+            color: #8b7355;
+            font-weight: 600;
+            float: right;
+        }
+
+        /* Romantic cursor trail */
+        .cursor-trail {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: radial-gradient(circle, rgba(255, 182, 193, 0.8) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: trailFade 1s ease-out forwards;
+        }
+
+        @keyframes trailFade {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0);
+            }
+        }
+
+        /* Cupid Game Styles */
+        .game-btn {
+            background: linear-gradient(135deg, #8b7355 0%, #d4a574 100%);
+            border: none;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(139, 115, 85, 0.2);
+        }
+
+        .game-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(139, 115, 85, 0.3);
+            background: linear-gradient(135deg, #d4a574 0%, #8b7355 100%);
+        }
+
+        .cupid-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+        }
+
+        .cupid-modal-content {
+            background: linear-gradient(135deg, #fff5f8 0%, #f8f6f2 100%);
+            margin: 3% auto;
+            padding: 30px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+            animation: modalSlideIn 0.4s ease-out;
+            position: relative;
+        }
+
+        .cupid-game {
+            margin: 0;
+            padding: 0;
+            background: transparent;
+            border: none;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #8b7355;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .game-instructions {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .game-area {
+            width: 100%;
+            height: 400px;
+            position: relative;
+            background: linear-gradient(135deg, #f0f8ff 0%, #fff0f5 100%);
+            border-radius: 15px;
+            border: 2px solid rgba(255, 182, 193, 0.3);
+            cursor: crosshair;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .cupid {
+            position: absolute;
+            font-size: 2.5rem;
+            transition: all 0.2s ease;
+            user-select: none;
+            cursor: pointer;
+            filter: drop-shadow(0 3px 6px rgba(0,0,0,0.2));
+            z-index: 5;
+        }
+
+        .heart-target {
+            position: absolute;
+            font-size: 2rem;
+            animation: floatTarget 4s ease-in-out infinite;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 3;
+        }
+
+        .heart-target:hover {
+            transform: scale(1.3);
+        }
+
+        @keyframes floatTarget {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-15px) rotate(3deg);
+            }
+            75% {
+                transform: translateY(-8px) rotate(-3deg);
+            }
+        }
+
+        .arrow {
+            position: absolute;
+            font-size: 1.5rem;
+            color: #d4a574;
+            pointer-events: none;
+            z-index: 4;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        }
+
+        .game-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 20px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+        }
+
+        .stat {
+            color: #8b7355;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .stat-value {
+            color: #2c2c2c;
+            font-weight: 600;
+            margin-left: 5px;
+            font-size: 1.4rem;
+        }
+
+        .game-message {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            color: #8b7355;
+            margin: 15px 0;
+            min-height: 30px;
+            font-style: italic;
+        }
+
+        .game-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .reset-btn {
+            background: linear-gradient(135deg, #8b7355 0%, #d4a574 100%);
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .reset-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139, 115, 85, 0.3);
+        }
+
+        .close-game-btn {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .close-game-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        .hit-effect {
+            position: absolute;
+            font-size: 1.8rem;
+            pointer-events: none;
+            animation: hitEffect 1s ease-out forwards;
+            z-index: 6;
+        }
+
+        @keyframes hitEffect {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(2.5) translateY(-40px);
+            }
+        }
+
+        /* Main container breathing effect */
+        .invitation-container {
+            max-width: 500px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 0;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.08);
+            padding: 60px 40px;
+            text-align: center;
+            animation: fadeInUp 1.5s ease-out, containerBreathe 6s ease-in-out infinite;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes containerBreathe {
+            0%, 100% {
+                box-shadow: 0 25px 80px rgba(0, 0, 0, 0.08);
+            }
+            50% {
+                box-shadow: 0 30px 100px rgba(255, 182, 193, 0.15);
+            }
+        }
+
+        /* Date section with breathing animation */
+        .date-section {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            font-weight: 400;
+            color: #2c2c2c;
+            margin: 40px 0;
+            letter-spacing: 4px;
+            animation: breathe 3s ease-in-out infinite;
+            position: relative;
+        }
+
+        @keyframes breathe {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.02);
+            }
+        }
+
+        /* Time section with romantic interaction */
+        .time-section {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #8b7355;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: 30px 0;
+            transition: all 0.3s ease;
+        }
+
+        .time-section:hover {
+            color: #d4a574;
+            transform: translateY(-2px);
+        }
+
+        .time-input {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #d4c4a8;
+            padding: 8px 0;
+            color: #2c2c2c;
+            font-size: 1.1rem;
+            font-family: 'Cormorant Garamond', serif;
+            width: 120px;
+            text-align: center;
+            margin-left: 10px;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .time-input:focus {
+            outline: none;
+            border-bottom-color: #8b7355;
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(255, 182, 193, 0.3);
+        }
+
+        .time-input:hover {
+            border-bottom-color: #d4a574;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .invitation-container {
+                padding: 50px 30px;
+                margin: 10px;
+                max-width: 400px;
+            }
+
+            .header-text {
+                font-size: 1rem;
+                letter-spacing: 3px;
+            }
+
+            .signature-name {
+                font-size: 4rem;
+            }
+
+            .cupid-modal-content {
+                margin: 5% auto;
+                padding: 20px;
+                width: 95%;
+                max-height: 85vh;
+            }
+
+            .game-area {
+                height: 300px;
+            }
+
+            .game-title {
+                font-size: 1.5rem;
+            }
+
+            .game-stats {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .game-controls {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .invitation-text {
+                font-size: 1rem;
+            }
+
+            .restaurant-name {
+                font-size: 1.1rem;
+                letter-spacing: 2px;
+            }
+
+            .date-section {
+                font-size: 1.8rem;
+                letter-spacing: 3px;
+            }
+
+            .time-section {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .invitation-container {
+                padding: 40px 25px;
+                max-width: 350px;
+            }
+
+            .header-text {
+                font-size: 0.9rem;
+                letter-spacing: 2px;
+            }
+
+            .cupid-modal-content {
+                margin: 2% auto;
+                padding: 15px;
+                width: 98%;
+                max-height: 90vh;
+            }
+
+            .game-area {
+                height: 250px;
+            }
+
+            .game-title {
+                font-size: 1.3rem;
+            }
+
+            .cupid {
+                font-size: 2rem;
+            }
+
+            .heart-target {
+                font-size: 1.5rem;
+            }
+
+            .game-stats {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .game-controls {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .modal-content {
+                margin: 15% auto;
+                padding: 25px;
+                width: 98%;
+            }
+
+            .modal-header {
+                font-size: 1.4rem;
+            }
+
+            .menu-item {
+                padding: 12px;
+            }
+
+            .invitation-text {
+                font-size: 0.95rem;
+                line-height: 1.7;
+            }
+
+            .restaurant-name {
+                font-size: 1rem;
+                letter-spacing: 1px;
+            }
+
+            .date-section {
+                font-size: 1.6rem;
+                letter-spacing: 2px;
+            }
+
+            .time-section {
+                font-size: 0.95rem;
+            }
+
+            .time-input {
+                width: 100px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating hearts background -->
+    <div class="floating-hearts" id="floatingHearts"></div>
+
+    <div class="invitation-container">
+        <!-- Header -->
+        <div class="header-text">TOGETHER WITH LOVE</div>
+        
+        <!-- Signature name -->
+        <div class="signature-name" onclick="createLoveParticles(event)">Quế Hân</div>
+
+        <!-- Invitation text -->
+        <p class="invitation-text">
+            INVITE MY DARLING TO ENJOY THE<br>
+            HAPPIEST MOMENT AT
+        </p>
+
+        <!-- Restaurant name - clickable -->
+        <div class="restaurant-name" onclick="openModal()">POSEIDON THAO DIEN DISTRICT 2</div>
+
+        <!-- Date -->
+        <div class="date-section">1 4 | 0 9 | 2 0 2 5</div>
+
+        <!-- Time section -->
+        <div class="time-section">
+            AT <input type="time" class="time-input" value="17:00"> IN THE AFTERNOON
+        </div>
+
+        <!-- Game Button -->
+        <button class="game-btn" onclick="openCupidGame()">💘 Play Cupid's Love Game 💘</button>
+    </div>
+
+    <!-- Cupid Game Modal -->
+    <div id="cupidModal" class="cupid-modal">
+        <div class="cupid-modal-content">
+            <div class="cupid-game">
+                <h3 class="game-title">💘 Cupid's Love Game 💘</h3>
+                <p class="game-instructions">Help Cupid shoot hearts! Click anywhere to aim and shoot arrows at the floating hearts.</p>
+                
+                <div class="game-area" id="gameArea">
+                    <div class="cupid" id="cupid">🏹</div>
+                </div>
+                
+                <div class="game-stats">
+                    <div class="stat">Score: <span class="stat-value" id="score">0</span></div>
+                    <div class="stat">Hearts Hit: <span class="stat-value" id="heartsHit">0</span></div>
+                </div>
+                
+                <div class="game-message" id="gameMessage">Click anywhere in the game area to start shooting! 💕</div>
+                
+                <div class="game-controls">
+                    <button class="reset-btn" onclick="resetGame()">Reset Game</button>
+                    <button class="close-game-btn" onclick="closeCupidGame()">Close Game</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="restaurantModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 class="modal-header">🌊 Poseidon Restaurant</h2>
+            
+            <div class="modal-section">
+                <h3>📍 Location & Contact</h3>
+                <p><span class="highlight">Address:</span> Thao Dien District, District 2, Ho Chi Minh City</p>
+                <p><span class="highlight">Phone:</span> +84 28 xxxx xxxx</p>
+                <p><span class="highlight">Hours:</span> 11:00 AM - 10:00 PM (Daily)</p>
+                <p><span class="highlight">Cuisine:</span> International Seafood Buffet</p>
+            </div>
+
+            <div class="modal-section">
+                <h3>🍽️ Buffet Highlights</h3>
+                <div class="menu-item">
+                    <div class="menu-item-name">Premium Seafood Station</div>
+                    <div class="menu-item-desc">Fresh lobster, king crab, oysters, sashimi & grilled specialties</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-name">International Hot Dishes</div>
+                    <div class="menu-item-desc">Western & Asian fusion, BBQ station, pasta & pizza counter</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-name">Dessert Paradise</div>
+                    <div class="menu-item-desc">Fresh fruits, premium cakes, ice cream & Vietnamese sweets</div>
+                </div>
+            </div>
+
+            <div class="modal-section">
+                <h3>✨ Special Features</h3>
+                <p>🎭 <span class="highlight">Romantic Ambiance:</span> Elegant waterfront dining with Saigon River views</p>
+                <p>🎵 <span class="highlight">Live Music:</span> Soft jazz and acoustic performances (weekends)</p>
+                <p>🍷 <span class="highlight">Premium Drinks:</span> Wine selection and signature cocktails available</p>
+                <p>🎂 <span class="highlight">Special Occasions:</span> Complimentary anniversary cake for couples</p>
+            </div>
+
+            <div class="modal-section">
+                <h3>💡 Dining Tips</h3>
+                <p>• Reservation recommended, especially for weekend dining</p>
+                <p>• Dress code: Smart casual to elegant</p>
+                <p>• Parking available with valet service</p>
+                <p>• Perfect for romantic dinners and special celebrations</p>
+            </div>
+
+            <div class="modal-section">
+                <h3>🚗 Getting There</h3>
+                <p><span class="highlight">By Car:</span> 15 minutes from District 1 center</p>
+                <p><span class="highlight">By Grab:</span> Available from anywhere in the city</p>
+                <p><span class="highlight">Nearby Landmarks:</span> Thao Dien Village, An Phu Supermarket</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Cupid Game Variables
+        let gameActive = false;
+        let score = 0;
+        let heartsHit = 0;
+        let heartSpawnTimer;
+        let cupidElement;
+        let gameArea;
+
+        // Cupid Game Functions
+        function openCupidGame() {
+            document.getElementById('cupidModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            setTimeout(initGame, 100); // Small delay to ensure modal is rendered
+        }
+
+        function closeCupidGame() {
+            document.getElementById('cupidModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+            gameActive = false;
+            clearInterval(heartSpawnTimer);
+        }
+
+        function initGame() {
+            cupidElement = document.getElementById('cupid');
+            gameArea = document.getElementById('gameArea');
+            
+            if (!cupidElement || !gameArea) return;
+            
+            // Position cupid at bottom center
+            cupidElement.style.left = '50%';
+            cupidElement.style.bottom = '15px';
+            cupidElement.style.transform = 'translateX(-50%)';
+            
+            // Add click handler to game area
+            gameArea.addEventListener('click', shootArrow);
+            
+            // Start spawning hearts
+            startHeartSpawning();
+        }
+
+        function startGame() {
+            if (!gameActive) {
+                gameActive = true;
+                updateGameMessage("Game started! Shoot the hearts! 💘");
+            }
+        }
+
+        function shootArrow(event) {
+            if (!gameActive) {
+                startGame();
+            }
+            
+            if (!gameActive) return;
+
+            const rect = gameArea.getBoundingClientRect();
+            const targetX = event.clientX - rect.left;
+            const targetY = event.clientY - rect.top;
+
+            // Get cupid position
+            const cupidRect = cupidElement.getBoundingClientRect();
+            const gameRect = gameArea.getBoundingClientRect();
+            const cupidX = cupidRect.left - gameRect.left + cupidRect.width / 2;
+            const cupidY = cupidRect.top - gameRect.top + cupidRect.height / 2;
+
+            // Create arrow
+            const arrow = document.createElement('div');
+            arrow.className = 'arrow';
+            arrow.innerHTML = '➤';
+            arrow.style.left = cupidX + 'px';
+            arrow.style.top = cupidY + 'px';
+            gameArea.appendChild(arrow);
+
+            // Calculate trajectory
+            const deltaX = targetX - cupidX;
+            const deltaY = targetY - cupidY;
+            const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+            
+            // Calculate angle and set arrow rotation
+            const angle = Math.atan2(deltaY, deltaX) * 180 / Math.PI;
+            arrow.style.transform = `rotate(${angle}deg)`;
+
+            // Animate arrow movement with physics
+            const speed = 800; // pixels per second
+            const duration = (distance / speed) * 1000; // convert to milliseconds
+            const startTime = Date.now();
+            
+            function animateArrow() {
+                const elapsed = Date.now() - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                // Linear interpolation for smooth movement
+                const currentX = cupidX + deltaX * progress;
+                const currentY = cupidY + deltaY * progress;
+                
+                arrow.style.left = currentX + 'px';
+                arrow.style.top = currentY + 'px';
+                
+                // Check for heart collisions
+                checkHeartCollision(currentX, currentY, arrow);
+                
+                if (progress < 1 && arrow.parentNode) {
+                    requestAnimationFrame(animateArrow);
+                } else {
+                    if (arrow.parentNode) {
+                        arrow.remove();
+                    }
+                }
+            }
+            
+            animateArrow();
+        }
+
+        function spawnHeart() {
+            if (!gameActive) return;
+
+            const heart = document.createElement('div');
+            heart.className = 'heart-target';
+            heart.innerHTML = ['💕', '💖', '💗', '💝', '💓'][Math.floor(Math.random() * 5)];
+            
+            // Random position, avoiding edges and cupid area
+            const margin = 50;
+            const maxX = gameArea.offsetWidth - margin;
+            const maxY = gameArea.offsetHeight - 100; // Avoid cupid area
+            
+            heart.style.left = (margin + Math.random() * (maxX - margin)) + 'px';
+            heart.style.top = (margin + Math.random() * (maxY - margin)) + 'px';
+            
+            gameArea.appendChild(heart);
+
+            // Remove heart after 4 seconds
+            setTimeout(() => {
+                if (heart.parentNode) {
+                    heart.remove();
+                }
+            }, 4000);
+        }
+
+        function checkHeartCollision(arrowX, arrowY, arrow) {
+            const hearts = gameArea.querySelectorAll('.heart-target');
+            
+            hearts.forEach(heart => {
+                const heartRect = heart.getBoundingClientRect();
+                const gameRect = gameArea.getBoundingClientRect();
+                
+                const heartX = heartRect.left - gameRect.left + heartRect.width / 2;
+                const heartY = heartRect.top - gameRect.top + heartRect.height / 2;
+                
+                const distance = Math.sqrt(
+                    Math.pow(arrowX - heartX, 2) + Math.pow(arrowY - heartY, 2)
+                );
+                
+                if (distance < 40) {
+                    // Hit!
+                    score += 10;
+                    heartsHit++;
+                    
+                    document.getElementById('score').textContent = score;
+                    document.getElementById('heartsHit').textContent = heartsHit;
+                    
+                    // Create hit effect
+                    const hitEffect = document.createElement('div');
+                    hitEffect.className = 'hit-effect';
+                    hitEffect.innerHTML = '+10 💕';
+                    hitEffect.style.left = heartX + 'px';
+                    hitEffect.style.top = heartY + 'px';
+                    hitEffect.style.color = '#ff69b4';
+                    gameArea.appendChild(hitEffect);
+                    
+                    setTimeout(() => {
+                        if (hitEffect.parentNode) {
+                            hitEffect.remove();
+                        }
+                    }, 1000);
+                    
+                    heart.remove();
+                    if (arrow.parentNode) {
+                        arrow.remove();
+                    }
+                    
+                    updateGameMessage(getRandomHitMessage());
+                }
+            });
+        }
+
+        function getRandomHitMessage() {
+            const messages = [
+                "Perfect shot! 💘",
+                "Love is in the air! 💕",
+                "Cupid's magic! ✨",
+                "Heart stolen! 💖",
+                "Amazing aim! 🎯",
+                "Pure love! 💗",
+                "Bulls-eye! 💝",
+                "Love struck! 💓",
+                "Romantic shot! 🌹"
+            ];
+            return messages[Math.floor(Math.random() * messages.length)];
+        }
+
+        function updateGameMessage(message) {
+            document.getElementById('gameMessage').textContent = message;
+        }
+
+        function startHeartSpawning() {
+            heartSpawnTimer = setInterval(() => {
+                if (gameActive) {
+                    spawnHeart();
+                }
+            }, 1200); // Spawn every 1.2 seconds
+        }
+
+        function resetGame() {
+            gameActive = false;
+            score = 0;
+            heartsHit = 0;
+            
+            clearInterval(heartSpawnTimer);
+            
+            document.getElementById('score').textContent = score;
+            document.getElementById('heartsHit').textContent = heartsHit;
+            
+            updateGameMessage("Click anywhere in the game area to start shooting! 💕");
+            
+            // Clear all game elements
+            gameArea.querySelectorAll('.heart-target, .arrow, .hit-effect').forEach(el => el.remove());
+            
+            // Restart heart spawning
+            startHeartSpawning();
+        }
+
+        // Romantic cursor trail effect
+        let mouseX = 0;
+        let mouseY = 0;
+
+        document.addEventListener('mousemove', function(e) {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
+            // Create cursor trail
+            if (Math.random() > 0.8) {
+                createCursorTrail(mouseX, mouseY);
+            }
+        });
+
+        function createCursorTrail(x, y) {
+            const trail = document.createElement('div');
+            trail.className = 'cursor-trail';
+            trail.style.left = x + 'px';
+            trail.style.top = y + 'px';
+            document.body.appendChild(trail);
+
+            setTimeout(() => {
+                trail.remove();
+            }, 1000);
+        }
+
+        // Floating hearts animation
+        function createFloatingHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = ['💕', '💖', '💗', '💝', '💓'][Math.floor(Math.random() * 5)];
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDelay = Math.random() * 2 + 's';
+            heart.style.animationDuration = (Math.random() * 3 + 5) + 's';
+            
+            document.getElementById('floatingHearts').appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 8000);
+        }
+
+        // Create sparkles around container
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.left = Math.random() * 100 + '%';
+            sparkle.style.top = Math.random() * 100 + '%';
+            sparkle.style.animationDelay = Math.random() * 2 + 's';
+            
+            document.querySelector('.invitation-container').appendChild(sparkle);
+
+            setTimeout(() => {
+                sparkle.remove();
+            }, 4000);
+        }
+
+        // Love particles when clicking signature
+        function createLoveParticles(event) {
+            const particles = ['💕', '💖', '💗', '💝', '💓', '✨', '💫'];
+            const rect = event.target.getBoundingClientRect();
+            
+            for (let i = 0; i < 6; i++) {
+                setTimeout(() => {
+                    const particle = document.createElement('div');
+                    particle.className = 'love-particle';
+                    particle.innerHTML = particles[Math.floor(Math.random() * particles.length)];
+                    particle.style.left = (rect.left + Math.random() * rect.width) + 'px';
+                    particle.style.top = (rect.top + Math.random() * rect.height) + 'px';
+                    particle.style.color = ['#ff69b4', '#ff1493', '#ff6347', '#ffd700'][Math.floor(Math.random() * 4)];
+                    
+                    document.body.appendChild(particle);
+
+                    setTimeout(() => {
+                        particle.remove();
+                    }, 2000);
+                }, i * 100);
+            }
+        }
+
+        // Modal functions
+        function openModal() {
+            document.getElementById('restaurantModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('restaurantModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside (for restaurant modal only)
+        window.onclick = function(event) {
+            const restaurantModal = document.getElementById('restaurantModal');
+            const cupidModal = document.getElementById('cupidModal');
+            
+            if (event.target == restaurantModal) {
+                closeModal();
+            }
+            // Cupid modal requires explicit close button click
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+                closeCupidGame();
+            }
+        });
+
+        // Main initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.querySelector('.invitation-container');
+            container.style.opacity = '0';
+            container.style.transform = 'translateY(40px)';
+            
+            setTimeout(() => {
+                container.style.transition = 'all 1.5s ease-out';
+                container.style.opacity = '1';
+                container.style.transform = 'translateY(0)';
+            }, 100);
+
+            // Enhanced hover effect for the container
+            container.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px) scale(1.02)';
+                this.style.boxShadow = '0 35px 100px rgba(255, 182, 193, 0.2)';
+            });
+            
+            container.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+                this.style.boxShadow = '0 25px 80px rgba(0, 0, 0, 0.08)';
+            });
+
+            // Enhanced time input with romantic effects
+            const timeInput = document.querySelector('.time-input');
+            timeInput.addEventListener('focus', function() {
+                this.style.transform = 'scale(1.1)';
+                this.style.borderBottomColor = '#8b7355';
+                this.style.boxShadow = '0 5px 15px rgba(255, 182, 193, 0.3)';
+                
+                // Create sparkles around input
+                for (let i = 0; i < 3; i++) {
+                    setTimeout(() => {
+                        const sparkle = document.createElement('div');
+                        sparkle.className = 'sparkle';
+                        sparkle.style.position = 'absolute';
+                        sparkle.style.left = Math.random() * 100 + 'px';
+                        sparkle.style.top = Math.random() * 50 + 'px';
+                        this.parentElement.appendChild(sparkle);
+                        
+                        setTimeout(() => sparkle.remove(), 4000);
+                    }, i * 200);
+                }
+            });
+            
+            timeInput.addEventListener('blur', function() {
+                this.style.transform = 'scale(1)';
+                this.style.borderBottomColor = '#d4c4a8';
+                this.style.boxShadow = 'none';
+            });
+
+            // Start background animations
+            setInterval(createFloatingHeart, 2000);
+            setInterval(createSparkle, 3000);
+
+            // Gentle pulse animation for restaurant name
+            const restaurantName = document.querySelector('.restaurant-name');
+            setInterval(() => {
+                restaurantName.style.animation = 'pulse 0.5s ease-in-out';
+                setTimeout(() => {
+                    restaurantName.style.animation = '';
+                }, 500);
+            }, 8000);
+        });
+
+        // Add pulse animation keyframe
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes pulse {
+                0% { transform: translateY(0) scale(1); }
+                50% { transform: translateY(-2px) scale(1.02); }
+                100% { transform: translateY(0) scale(1); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
